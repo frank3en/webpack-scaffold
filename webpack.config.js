@@ -13,6 +13,21 @@ module.exports = ({ mode } = { mode: "production" }) => {
       output: {
         filename: "[contenthash].[name].[id].js", // temp,not set
       },
+      module: {
+        rules: [
+          {
+            test: /\.jpe?g$/i,
+            use: [
+              {
+                loader: "url-loader",
+                options: {
+                  limit: 5000,
+                },
+              },
+            ],
+          },
+        ],
+      },
       plugins: [new HTMLWebpackPlugin(), new webpack.ProgressPlugin()],
     },
     modeConfig(mode)

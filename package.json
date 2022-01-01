@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "webpack": "webpack",
-    "serve": "webpack serve --open",
-    "dev": "npm run serve -- --env mode=development",
+    "serve": "webpack serve",
+    "dev": "npm run serve  -- --env mode=development --hot",
     "prod": "npm run webpack -- --env mode=production",
     "debug": "node --inspect --inspect-brk ./src/index.js",
     "debug:webpack": "node --inspect --inspect-brk node_modules/webpack/bin/webpack.js"
@@ -16,10 +16,13 @@
   "devDependencies": {
     "css-loader": "6.5.1",
     "eslint": "8.5.0",
+    "file-loader": "6.2.0",
     "html-webpack-plugin": "5.5.0",
+    "mini-css-extract-plugin": "2.4.5",
     "sass": "1.45.2",
     "sass-loader": "12.4.0",
     "style-loader": "3.3.1",
+    "url-loader": "4.1.1",
     "webpack": "5.65.0",
     "webpack-cli": "4.9.1",
     "webpack-dev-server": "4.7.2",

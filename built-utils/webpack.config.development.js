@@ -16,5 +16,8 @@ module.exports = (env) => {
         },
       ],
     },
+    devServer: {
+      hot: "only",
+    },
   };
 };
